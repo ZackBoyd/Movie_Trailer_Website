@@ -27,7 +27,7 @@ mystic_river = media.movie(
 	"https://www.youtube.com/watch?v=W7NktJhrRYQ",
 	"87",
 	"https://www.rottentomatoes.com/m/mystic_river",
-	"https://resizing.flixster.com/eGDf5HoDpMlpgs8fre8RgZzOvU8=/206x305/v1.bTsxMTE2NjczMjtqOzE3MDk0OzEyMDA7ODAwOzEyMDA"
+	"https://resizing.flixster.com/qSgwhMdV7kXFi_qU0t3GhA27JWU=/206x305/v1.bTsxMTE2ODA5NztqOzE3MTM5OzEyMDA7ODAwOzEyMDA"
 	)
 
 gone_baby_gone = media.movie(
