@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="https://www.youtube.com/watch?v=iojhqm0JTW4" data-toggle="modal" data-target="#trailer">
+    <img src="https://resizing.flixster.com/C3KwdGYuUGFuBcsJ8WaPCqvw-oQ=/206x305/v1.bTsxMTE2NjcyMTtqOzE3MDk0OzEyMDA7ODAwOzEyMDA" width="220" height="342">
+    <h2>The Departed</h2>
+    <p>Critics Consensus: Featuring outstanding work from an excellent cast, The Departed is a thoroughly engrossing gangster drama with the gritty authenticity and soupy morality we come to expect from Martin Scorsese.</p>
+    <p>94'%' fresh on Rotten Tomatoes<p>
+    <a href="https://www.rottentomatoes.com/m/departed/">Visit Rotten Tomatoes Page</a>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="https://www.youtube.com/watch?v=WcXt9aUMbBk" data-toggle="modal" data-target="#trailer">
+    <img src="https://resizing.flixster.com/eGDf5HoDpMlpgs8fre8RgZzOvU8=/206x305/v1.bTsxMTE2NjczMjtqOzE3MDk0OzEyMDA7ODAwOzEyMDA" width="220" height="342">
+    <h2>The Town</h2>
+    <p>Critics Consensus: Tense, smartly written, and wonderfully cast, The Town proves that Ben Affleck has rediscovered his muse -- and that he's a director to be reckoned with.</p>
+    <p>94'%' fresh on Rotten Tomatoes<p>
+    <a href="https://www.rottentomatoes.com/m/the_town/">Visit Rotten Tomatoes Page</a>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="https://www.youtube.com/watch?v=W7NktJhrRYQ" data-toggle="modal" data-target="#trailer">
+    <img src="https://resizing.flixster.com/eGDf5HoDpMlpgs8fre8RgZzOvU8=/206x305/v1.bTsxMTE2NjczMjtqOzE3MDk0OzEyMDA7ODAwOzEyMDA" width="220" height="342">
+    <h2>Mystic River</h2>
+    <p>Critics Consensus: Anchored by the exceptional acting of its strong cast, Mystic River is a somber drama that unfolds in layers and conveys the tragedy of its story with visceral power</p>
+    <p>87'%' fresh on Rotten Tomatoes<p>
+    <a href="https://www.rottentomatoes.com/m/mystic_river">Visit Rotten Tomatoes Page</a>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="https://www.youtube.com/watch?v=vAhPH8Qa_os" data-toggle="modal" data-target="#trailer">
+    <img src="https://resizing.flixster.com/VDQeC8Tdx6ktxADjC5p-aSCat8I=/206x305/v1.bTsxMTE3NjE5ODtqOzE3MDk0OzEyMDA7ODAwOzEyMDA" width="220" height="342">
+    <h2>Gone Baby Gone</h2>
+    <p>Critics Consensus: Ben Affleck proves his directing credentials in this gripping dramatic thriller, drawing strong performances from the excellent cast and bringing working-class Boston to the screen.</p>
+    <p>94'%' fresh on Rotten Tomatoes<p>
+    <a href="https://www.rottentomatoes.com/m/gone_baby_gone">Visit Rotten Tomatoes Page</a>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="https://www.youtube.com/watch?v=9fbo_pQvU7M" data-toggle="modal" data-target="#trailer">
+    <img src="https://resizing.flixster.com/mjT6cQ9oRB_EFajO5lThVVfOgnc=/206x305/v1.bTsxMTE2NzQyODtqOzE3MDk0OzEyMDA7ODAwOzEyMDA" width="220" height="342">
+    <h2>Ted</h2>
+    <p>Critics Consensus: Ted's romance versus bromance plot is familiar, but the film's held aloft by the high-concept central premise and a very funny (albeit inconsistent) script.</p>
+    <p>67'%' fresh on Rotten Tomatoes<p>
+    <a href="https://www.rottentomatoes.com/m/ted_2012">Visit Rotten Tomatoes Page</a>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="https://www.youtube.com/watch?v=ydXojYfCF3I" data-toggle="modal" data-target="#trailer">
+    <img src="https://resizing.flixster.com/bLDds8lCNnzUyyBVM9CDz2-yx-w=/206x305/v1.bTsxMTIwODQ4NTtqOzE3MDk0OzEyMDA7MTMwNTsxNzQw" width="220" height="342">
+    <h2>The Boondock Saints</h2>
+    <p>Critics Consensus: A juvenile, ugly movie that represents the worst tendencies of directors channeling Tarantino.</p>
+    <p>20'%' fresh on Rotten Tomatoes<p>
+    <a href="https://www.rottentomatoes.com/m/boondock_saints">Visit Rotten Tomatoes Page</a>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="https://www.youtube.com/watch?v=71l-kIhJ5j8" data-toggle="modal" data-target="#trailer">
+    <img src="https://resizing.flixster.com/30HO5Y9YHJpyJxKEw26LZUZahaU=/206x305/v1.bTsxMTE2ODkzOTtqOzE3MDk0OzEyMDA7ODAwOzEyMDA" width="220" height="342">
+    <h2>The Fighter</h2>
+    <p>Critics Consensus: Led by a trio of captivating performances from Mark Wahlberg, Christian Bale, and Amy Adams, The Fighter is a solidly entertaining, albeit predictable, entry in the boxing drama genre.</p>
+    <p>90'%' fresh on Rotten Tomatoes<p>
+    <a href="https://www.rottentomatoes.com/m/the-fighter">Visit Rotten Tomatoes Page</a>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="https://www.youtube.com/watch?v=nH9LZOXBMUE" data-toggle="modal" data-target="#trailer">
+    <img src="https://resizing.flixster.com/vDSTX05Ie8kZHC2prKm-3ahl-bU=/206x305/v1.bTsxMTYxNDc1NjtqOzE3MTQ0OzEyMDA7Nzk4OzEwNjQ" width="220" height="342">
+    <h2>Good Will Hunting</h2>
+    <p>Critics Consensus: It follows a predictable narrative arc, but Good Will Hunting adds enough quirks to the journey -- and is loaded with enough powerful performances -- that it remains an entertaining, emotionally rich drama.</p>
+    <p>97'%' fresh on Rotten Tomatoes<p>
+    <a href="https://www.rottentomatoes.com/m/good_will_hunting/">Visit Rotten Tomatoes Page</a>
+</div>
+
+    </div>
+  </body>
+</html>

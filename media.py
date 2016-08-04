@@ -9,11 +9,11 @@ class movie(object):
 	# rotten_tomatoes_url: url to movie's Rotten Tomatoes page
 	# poster_image: link to image of movie poster
 	
-	def __init__(self, title, description, trailer_url, fresh_rating, rotten_tomatoes_url, poster_image):
+	def __init__(self, title, description, trailer_youtube_url, fresh_rating, rotten_tomatoes_url, poster_image):
 		super(movie, self).__init__()
 		self.title = title
 		self.description = description
-		self.trailer_url = trailer_url
+		self.trailer_youtube_url = trailer_youtube_url
 		self.fresh_rating = fresh_rating
 		self.rotten_tomatoes_url = rotten_tomatoes_url
 		self.poster_image = poster_image
